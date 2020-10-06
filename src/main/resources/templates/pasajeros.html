@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--  <meta charset="ISO-8859-1">-->
+ <meta charset="utf-8">
+
+<title>Desafio Asociaciones II</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Asociaciones II</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link " href="/destino/destinos">Destinos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="/pasajero/pasajeros">Pasajeros</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/pasajero/crear">Nuevo Pasajero</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/destino/crear">Nuevo Destino</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<h2>Pasajeros</h2>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Rut</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellido</th>
+      <th scope="col">Edad</th>
+      <th scope="col">Ciudad Natal</th>
+      <th scope="col">Destinos</th>
+   
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="temp:${listaPasajeros}">
+      <th  th:text="${temp.id}"scope="row"></th> 
+      <td th:text="${temp.rut}"></td> 
+      <td th:text="${temp.nombre}"></td> 
+      <td th:text="${temp.apellido}"></td> 
+      <td th:text="${temp.edad}"></td> 
+      <td th:text="${temp.ciudad_natal}"></td>
+      <td th:text="${temp.destino}"></td> 
+    </tr>
+ 
+  </tbody>
+</table>
+
+</body>
+</html>
